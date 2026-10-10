@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;600;700;800&display=swap");
+
+.why-fuelsos {
+  --why-brand: #14b8a6;
+  --why-brand-dark: #0f766e;
+  --why-accent: #2dd4bf;
+
+  --why-bg: #07111f;
+  --why-card: rgba(13, 27, 42, 0.88);
+  --why-line: rgba(45, 212, 191, 0.2);
+
+  --why-text: #dbe7ef;
+  --why-muted: #91a4b5;
+  --why-white: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(20, 184, 166, 0.1),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(45, 212, 191, 0.07),
+      transparent 30%
+    ),
+    var(--why-bg);
+
+  color: var(--why-text);
+  font-family: "Anek Malayalam", "Noto Sans Malayalam", system-ui, sans-serif;
+  padding: 72px 20px;
+  overflow: hidden;
+}
+
+.why-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+
+.why-heading {
+  max-width: 640px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.why-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: var(--why-accent);
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid var(--why-line);
+  border-radius: 999px;
+}
+
+.why-heading h2 {
+  margin: 0 0 16px;
+
+  font-size: clamp(1.9rem, 6.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+
+  color: var(--why-white);
+}
+
+.why-heading h2 span {
+  background: linear-gradient(135deg, var(--why-brand), var(--why-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--why-accent);
+}
+
+.why-heading p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  color: var(--why-muted);
+}
+
+/* ---------- Grid ---------- */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ---------- Card ---------- */
+
+.why-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 26px 22px 24px;
+
+  background: var(--why-card);
+  border: 1px solid var(--why-line);
+  border-radius: 18px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.why-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(90deg, var(--why-brand), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--why-brand);
+  box-shadow: 0 18px 45px rgba(20, 184, 166, 0.14);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-card h3 {
+  margin: 18px 0 10px;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  color: var(--why-white);
+}
+
+.why-card p {
+  margin: 0;
+
+  font-size: 0.97rem;
+  line-height: 1.75;
+
+  color: var(--why-muted);
+}
+
+.why-card-number {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+
+  color: rgba(45, 212, 191, 0.09);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- Icon ---------- */
+
+.why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  color: var(--why-accent);
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid var(--why-line);
+  border-radius: 14px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.why-card:hover .why-icon {
+  color: var(--why-white);
+  background: linear-gradient(135deg, var(--why-brand), var(--why-brand-dark));
+}
+
+/* All colour variants stay inside the teal palette.
+   The classes are kept so the JSX does not need to change. */
+.why-icon.orange,
+.why-icon.blue,
+.why-icon.green,
+.why-icon.purple,
+.why-icon.red,
+.why-icon.teal {
+  color: var(--why-accent);
+}
+
+/* ---------- Bottom CTA ---------- */
+
+.why-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  margin-top: 40px;
+  padding: 26px 22px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(20, 184, 166, 0.14),
+    rgba(13, 27, 42, 0.6)
+  );
+
+  border: 1px solid var(--why-line);
+  border-left: 4px solid var(--why-brand);
+  border-radius: 16px;
+}
+
+.why-bottom h3 {
+  margin: 0 0 6px;
+
+  font-size: clamp(1.15rem, 4vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.5;
+
+  color: var(--why-white);
+}
+
+.why-bottom p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: var(--why-muted);
+}
+
+.why-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 26px;
+
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  color: var(--why-white);
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.why-cta:hover {
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(20, 184, 166, 0.3);
+}
+
+.why-cta:focus-visible {
+  outline: 3px solid var(--why-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 640px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 32px;
+  }
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 960px) {
+  .why-fuelsos {
+    padding: 96px 32px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .why-heading {
+    margin-bottom: 56px;
+  }
+}
+
+/* ---------- Animations ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .why-card {
+    animation: why-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+    animation-delay: calc(var(--card-index, 0) * 0.08s);
+  }
+
+  @keyframes why-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .why-cta {
+    animation: why-pulse 2.6s ease-out 1.5s infinite;
+  }
+
+  .why-cta:hover {
+    animation: none;
+  }
+
+  @keyframes why-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.45);
+    }
+
+    70% {
+      box-shadow: 0 0 0 16px rgba(20, 184, 166, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-card,
+  .why-icon,
+  .why-cta {
+    transition: none;
+  }
+}

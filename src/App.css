@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #07111f;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: "Anek Malayalam", "Noto Sans Malayalam", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  text-align: left;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}

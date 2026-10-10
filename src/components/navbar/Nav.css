@@ -1,0 +1,495 @@
+/* ========================================
+   FUELSOS MODERN NAVBAR
+======================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  width: 100%;
+
+  background: rgba(8, 15, 25, 0.94);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.navbar-container {
+  max-width: 1280px;
+
+  height: 82px;
+
+  margin: auto;
+
+  padding: 0 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.navbar-logo {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  width: 200px;
+
+  height: auto;
+
+  display: block;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  transform: scale(1.04);
+
+  filter:
+    drop-shadow(0 0 10px rgba(255, 90, 31, 0.35));
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  flex: 1;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #d8dde5;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 8px 6px;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* Orange underline */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 2px;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:red;
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   CTA BUTTON
+======================================== */
+
+.navbar-cta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 145px;
+
+  padding: 12px 17px;
+
+  border-radius: 9px;
+
+  background:
+    red;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 7px 22px rgba(255, 70, 20, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.navbar-cta:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 10px 28px rgba(255, 70, 20, 0.38);
+}
+
+
+/* Lightning */
+
+.cta-zap {
+  animation: zapPulse 1.5s infinite;
+}
+
+@keyframes zapPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.mobile-menu-btn {
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 43px;
+
+  height: 43px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border 0.25s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.11);
+
+  border-color: rgba(255, 90, 31, 0.5);
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .navbar-cta {
+    min-width: 125px;
+
+    padding: 11px 13px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .navbar-container {
+    height: 70px;
+
+    padding: 0 18px;
+  }
+
+
+  /* Logo */
+
+  .navbar-logo img {
+    width: 125px;
+  }
+
+
+  /* Hide desktop */
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-cta {
+    display: none;
+  }
+
+
+  /* Show menu */
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+
+  /* Mobile menu */
+
+  .mobile-menu {
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        #08101a,
+        #0d1722
+      );
+
+    border-top: 1px solid transparent;
+
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+
+  /* Open */
+
+  .mobile-menu-open {
+    max-height: 600px;
+
+    opacity: 1;
+
+    border-top-color:
+      rgba(255, 255, 255, 0.08);
+  }
+
+
+  /* Inner */
+
+  .mobile-menu-inner {
+    padding: 10px 20px 22px;
+  }
+
+
+  /* Links */
+
+  .mobile-menu-inner > a:not(.mobile-cta) {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 5px;
+
+    color: #e5e7eb;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.07);
+
+    transition:
+      color 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+  .mobile-menu-inner > a:not(.mobile-cta):hover {
+    color: #ff6a00;
+
+    padding-left: 10px;
+  }
+
+
+  /* Numbers */
+
+  .mobile-menu-inner > a span {
+    color: #6b7280;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    width: 20px;
+  }
+
+
+  /* ========================================
+     MOBILE CTA
+  ======================================== */
+
+  .mobile-cta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    background:
+      linear-gradient(
+        135deg,
+        #ff3b1f,
+        #ff6a00
+      );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+      0 8px 22px rgba(255, 70, 20, 0.25);
+  }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 0 14px;
+  }
+
+  .navbar-logo img {
+    width: 112px;
+  }
+
+  .mobile-menu-inner {
+    padding-left: 16px;
+
+    padding-right: 16px;
+  }
+
+}
